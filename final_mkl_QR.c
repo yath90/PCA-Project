@@ -71,7 +71,7 @@ int main()
 		for (j = 0; j < 1000; j++)
 		{
 			s_time = timerval();
-			info = LAPACKE_dgeqrf(matrix_order, m, n, a, lda, tau);  //library function for QR decomposition
+			info = LAPACKE_dgeqrf(matrix_order, m, n, a, lda, tau);  //library function for double precision QR decomposition for a general matrix
 			#pragma omp barrier
 			info1 = LAPACKE_dorgqr(matrix_layout, m, n, n, a, lda, tau); //library function for extracting Q matrix from output matrix of previous instruction
 			e_time = timerval();			
